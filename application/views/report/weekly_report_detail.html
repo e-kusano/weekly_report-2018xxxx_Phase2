@@ -1,0 +1,40 @@
+{{ include('common/header.html')}}
+{{ include('common/body_header.html')}}
+
+<div id="main-content">
+	<div class="event-list">
+		<div class="event-title cf">
+			<h3><span class="brs">{{ weekly_report_name }} </span></h3>
+		</div>
+		<div class="event-wrapper">
+			<div class="event-content">
+				<h4><i class="fa" aria-hidden="true"></i>参画プロジェクト名</h4>
+				<p>{{ report_detail_info.project_name }}</p>
+			</div>
+			<div class="event-content">
+				<h4><i class="fa" aria-hidden="true"></i>作業内容</h4>
+				<p>{{ report_detail_info.work_content|nl2br }}</p>
+			</div>
+			<div class="event-content">
+				<h4><i class="fa" aria-hidden="true"></i>作業に対する疑問/不明点/反省等</h4>
+				<p>{{ report_detail_info.reflect|nl2br }}</p>
+			</div>
+			<div class="event-content">
+				<h4><i class="fa" aria-hidden="true"></i>その他</h4>
+				<p>{{ report_detail_info.other|nl2br }}</p>
+			</div>
+			{% if session.userdata.user_name == '管理者' %}
+				<p align="center">
+					<input type="button"  class="btn-excel" value="Excelに出力する" onclick="sub_redirect('{{ base_url }}','WeeklyReportList', 'excel', '{{ report_detail_info.id }}');">
+				</p>
+			{% endif %}
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div id="btn-entry">
+		<p align="center">
+			<input type="button" class="btn_return" value="トップページに戻る" onclick="sub_redirect('{{ base_url }}','WeeklyReportList');">
+		</p>
+	</div>
+</div>
+{{ include('common/footer.html')}}

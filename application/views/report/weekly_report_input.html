@@ -1,0 +1,46 @@
+{{ include('common/header.html')}}
+{{ include('common/body_header.html')}}
+
+<script type="text/javascript">
+	//期間は月曜日のみ選択可
+	//ハッピーマンデーは考慮しない
+	$(function() {
+		$(".datepicker").datepicker('option','beforeShowDay',function(date){
+			var ret = [(date.getDay() == 1)];
+			return ret;
+		});
+	});
+</script>
+
+<div id="main-content">
+	<div class="event-list">
+		<form name="inputform" class="input" method="post" action="{{ base_url }}WeeklyReportRegist/{% if id != '' %}modify{% else %}regist{% endif%}">
+			<input type="hidden" name="id" value="{{ id }}">
+			{{ include('common/err_msg.html')}}
+			<dl>
+				{% if id == ''%}
+					<dt>期間<span class="req">必須</span></dt>
+					<dd><input class="datepicker" type="text" name="standard_date" value="{{ standard_date }}" readonly></dd>
+				{% endif %}
+				<dt>参画プロジェクト名<span class="req">必須</span></dt>
+				<dd><input type="text" name="project_name" size="50" value="{{ project_name }}" autocomplete="project_name"/></dd>
+				<dt>作業内容<span class="req">必須</span></dt>
+				<dd><textarea name="work_content" cols=80 rows=10 />{{ work_content }}</textarea></dd>
+				<dt>作業に対する疑問/不明点/反省等<span class="req">必須</span></dt>
+				<dd><textarea name="reflect" cols=80 rows=10 />{{ reflect }}</textarea></dd>
+				<dt>その他</dt>
+				<dd><textarea name="other" cols=80 rows=10 />{{ other }}</textarea></dd>
+			</dl>
+			<p align="center">
+				<input type="submit" class="btn_regist" value="登録">
+			</p>
+		</form>
+	</div>
+	<div class="spacer"></div>
+	<div id="btn-entry">
+		<p align="center">
+			<input type="button" class="btn_return" value="トップページに戻る" onclick="sub_redirect('{{ base_url }}','WeeklyReportList');">
+		</p>
+	</div>
+</div>
+{{ include('common/footer.html')}}

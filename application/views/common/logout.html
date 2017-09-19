@@ -1,0 +1,4 @@
+{% if session.userdata.is_login == "1" %}
+	<p id="welcome"><span class="tb-none">ようこそ </span>{{ session.userdata.user_name}} さん <i class="fa fa-user-circle-o" aria-hidden="true"></i></p>
+	<p id="logout"><a href="{{ base_url }}Logout">ログアウト <i class="fa fa-sign-out" aria-hidden="true"></i></a></p>
+{% endif %}

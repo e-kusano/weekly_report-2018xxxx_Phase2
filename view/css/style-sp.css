@@ -1,0 +1,134 @@
+body{
+	line-height: 1.2;
+	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'メイリオ', meiryo, sans-serif;
+	-webkit-text-size-adjust:100%;
+	font-size: 14px;
+	color: #444444;
+	width: 100%;
+}
+
+input,
+textarea,
+select{
+	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'メイリオ', meiryo, sans-serif;
+	-webkit-text-size-adjust:100%;
+}
+
+#title-contents{
+	width: 98%;
+	margin: 0 auto;
+	font-size: 90%;
+}
+
+#titleBox h1{
+	float: none;
+	font-size: 100%;
+	text-align: center;
+}
+
+#logout-contents{
+	float: none;
+	font-size: 100%;
+}
+
+#logout{
+	float: right;
+}
+
+#header-contents {
+    width: 98%;
+    height: auto;
+}
+
+#logo {
+    width: 40%;
+}
+
+#main-content{
+	min-height: 80%;
+}
+
+#main-wrapper{
+	width: 98%;
+}
+
+#left-wrapper {
+    width: 98%;
+    margin: 0 auto 20px;
+    height: auto;
+    float: none;
+    /* padding: 0; */
+}
+
+#regist {
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    position: absolute;
+    right: 10px;
+}
+
+.btn_regist {
+    padding: .5em 4em;
+}
+
+#left-wrapper h2 {
+    position: absolute;
+    /* top: -40px; */
+    top: 20px;
+    left: 0;
+    display: inline-block;
+    font-size: 100%;
+    font-weight: normal;
+    padding: 10px 20px;
+    background: #222;
+    color: #fff;
+    text-shadow: 1px 1px 1px #666;
+    box-shadow: 1px 1px 1px #ccc;
+}
+
+#list-wrapper {
+    width: 100%;
+    background-color: #FFF;
+    /* border-radius: 5px; */
+    box-shadow: 1px 1px 1px #ccc;
+    padding: 6em .5em .5em;
+    height: auto;
+    min-height: auto;
+}
+
+#left-wrapper table tbody td {
+    border-bottom: dotted 1px #ccc;
+    box-sizing: border-box;
+    padding: 1em 0;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+#right-wrapper {
+/* 	margin: 0 30 20; */
+	width: 90%;
+	margin: 0 auto;
+	height: auto;
+	float: none;
+	padding: 0;
+	position: relative;
+}
+
+.event-wrapper {
+    padding: 1em;
+    background: #fff;
+    box-shadow: 1px 1px 1px #ccc;
+}
+
+.event-list {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.event-title span {
+    font-size: 130%;
+}
+
+.sp-none{
+	display: none;
+}

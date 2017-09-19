@@ -1,0 +1,18 @@
+{{ include('common/header.html')}}
+{{ include('common/body_header.html')}}
+
+<div id="main-content">
+	<div class="event-list">
+		<form name="inputform" class="input" method="post" action="{{ base_url }}WeeklyReportList">
+			<div class="event-content">
+				{{ regist_msg }}
+			</div>
+			<div id="btn-entry">
+				<p align="center">
+					<input type="submit" class="btn_return" value="一覧に戻る">
+				</p>
+			</div>
+		</form>
+	</div>
+</div>
+{{ include('common/footer.html')}}

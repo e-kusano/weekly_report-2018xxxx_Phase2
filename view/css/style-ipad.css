@@ -1,0 +1,45 @@
+body{
+	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'メイリオ', meiryo, sans-serif;
+	-webkit-text-size-adjust:100%;
+	line-height: 1.4;
+	font-size: 14px;
+	color: #444444;
+	width: 100%;
+}
+
+input,
+textarea,
+select{
+	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'メイリオ', meiryo, sans-serif;
+	-webkit-text-size-adjust:100%;
+}
+
+#title-contents{
+	width: 95%;
+	margin: 0 auto;
+}
+
+#titleBox h1{
+	float: left;
+}
+
+#header-contents {
+    width: 95%;
+}
+
+#main-content{
+	min-height: 80%;
+}
+
+#main-wrapper{
+	width: 95%;
+}
+
+#left-wrapper {
+    width: 68%;
+    margin-right: 2%;
+    height: auto;
+    float: left;
+    /* padding: 0; */
+    position: relative;
+}

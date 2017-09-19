@@ -1,0 +1,79 @@
+{{ include('common/header.html')}}
+{{ include('common/body_header.html')}}
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".mytable").paginate({
+	  rows: 10
+  });
+});
+</script>
+
+<div id="main-content">
+<div id="main-wrapper" class="cf">
+	<div id="left-wrapper">
+	<h2>
+		{{ wrapper_title }}
+	</h2>
+	{% if session.userdata.user_name != '管理者' %}
+		<input type="button" id="regist" class="btn_regist" value="週報の提出" onclick="sub_redirect('{{ base_url }}', 'WeeklyReportRegist', 'regist_input')">
+	{% endif %}
+<!-- 	<div class="spacer"></div> -->
+	<div id="list-wrapper">
+	<table border="0" class="list mytable">
+		{% if list|length == 0%}
+			<tr>
+				<td align="center">データはありません。</td>
+			</tr>
+		{% else %}
+			<thead>
+				<tr>
+					<td align="center">編集</td>
+					<td>日付</td>
+					<td>作成者</td>
+					<td>詳細</td>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in list%}
+				<tr>
+					<td align="center"><a href="{{ base_url }}WeeklyReportRegist/modify_input/{{ item.id }}"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+					<td><i class="fa fa-calendar sp-none" aria-hidden="true"></i>{{ item.date }}</td>
+					<td><i class="fa fa-user-circle-o sp-none" aria-hidden="true"></i>{{ item.name}}</td>
+					<td align="center">
+						<input type="button" class="btn_detail" value="詳細" onclick="sub_redirect('{{ base_url }}', 'WeeklyReportList', 'detail', '{{ item.id }}')">
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		{% endif %}
+	</table>
+	</div>
+	</div>
+	<div id="right-wrapper">
+		<form action="{{ base_url }}WeeklyReportList/search" method="post">
+			<div class="search-list datepick-wrapper">
+				<h3>日付検索</h3>
+				<!-- <div class="spacer"></div> -->
+				<p class="start-date">開始</p><input class="datepicker start-date-p" type="text" name="search_date_from" value="{{ search_date_from }}">
+				<div class="spacer"></div>
+				<input class="datepicker" type="text" name="search_date_to" value="{{ search_date_to }}"><p class="end-date">終了</p>
+			</div>
+			<div class="spacer"></div>
+			{{ include('report/list/search_col_val.html')}}
+			<div class="spacer"></div>
+			{% if session.userdata.user_name == '管理者' %}
+				<div class="search-list">
+				<h3>名前</h3>
+				{{ name_list|raw}}
+				</div>
+				<div class="spacer"></div>
+			{% endif %}
+			<div style="text-align:center;">
+				<input type="submit" class="btn_search" align="center" value="検索">
+			</div>
+		</form>
+	</div>
+</div>
+</div>
+{{ include('common/footer.html')}}

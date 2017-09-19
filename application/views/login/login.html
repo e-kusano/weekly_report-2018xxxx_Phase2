@@ -1,0 +1,47 @@
+<html lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>週報システム｜株式会社ミライタス</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="icon" href="">
+	<link rel="apple-touch-icon" href="" />
+	<link rel="stylesheet" href="{{ base_url }}view/css/html5reset-1.6.1.css" />
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{{ base_url }}view/css/style.css" />
+	<link rel="stylesheet" href="{{ base_url }}view/css/style-sp.css" media="only screen and (min-width: 0px) and (max-width: 480px)" />
+	<link rel="stylesheet" href="{{ base_url }}view/css/style-tb.css" media="only screen and (min-width: 481px) and (max-width: 768px)"/>
+	<link rel="stylesheet" href="{{ base_url }}view/css/style-ipad.css" media="only screen and (min-width: 769px) and (max-width: 1024px)"/>
+	<link rel="stylesheet" href="{{ base_url }}view/css/style-pc.css" media="only screen and (min-width: 1025px) "/>
+	
+	<script src="{{ base_url }}view/js/app.js"></script>
+</head>
+
+<body id="front">
+	<header>
+		<div id="titleBox">
+		<div id="title-contents" class="cf">
+			<h1>
+				<span class="site-title">週報システム</span> | 株式会社ミライタス
+				{{ include('common/logout.html') }}
+			</h1>
+		</div>
+		</div>
+	</header>
+	<div id="log-logo">
+		<img alt="株式会社ミライタス" src="{{ base_url }}view/_images/login_logo.gif">
+	</div>
+	<div id="loginform">
+		<form name="loginform" class="login" action="{{ base_url }}Login/validate" method="post">
+			{{ include('common/err_msg.html')}}
+			<dl>
+				<dt>ユーザーID</dt>
+				<dd><input type="text" name="user_id" value="{{user_id}}" autocomplete="user_id" /></dd>
+				<dt>パスワード</dt>
+				<dd><input type="password" name="password"/></dd>
+			</dl>
+			<input type="submit" id="btn_login" value="ログイン">
+		</form>
+	</div>
+</body>
+
+</html>
