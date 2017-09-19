@@ -1,0 +1,6 @@
+{% if err == "1" %}
+	{% for item in err_msg %}
+		<p class="err_msg">{{ item }}</p>
+		<div class="spacer"></div>
+	{% endfor %}
+{% endif %}
